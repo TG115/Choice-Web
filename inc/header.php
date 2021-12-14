@@ -26,6 +26,7 @@
               <span class="mb-0 text-sm  font-weight-bold"><?= $_SESSION['choice_nickname'] ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMypage">
+              <a class="dropdown-item" href="/">마이 페이지</a>
               <a class="dropdown-item" href="/logout.php">로그아웃</a>
             </div>
           </li>

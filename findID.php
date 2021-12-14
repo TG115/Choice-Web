@@ -52,7 +52,7 @@
                   <button type="submit" class="btn btn-primary my-4">아이디 찾기</button>
                 </div>
                 <div class="text-center">
-                  <a href=".php" class="text-white-50">로그인</a> | <a href="/findPW.php" class="text-white-50">비밀번호 찾기</a> 
+                  <a href="/login.php" class="text-white-50">로그인</a> | <a href="/findPW.php" class="text-white-50">비밀번호 찾기</a> 
                 </div>
               </form>
             </div>

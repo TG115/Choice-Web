@@ -83,7 +83,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
                                     <td width="120" class="text-center font-weight-bold">업로드</td>
                                     <td>
                                         <div class="input-group">
-                                            <input class="form-control" type="file" name="thumb" id="bg_file" accept="image/*">
+                                            <input class="form-control" type="file" name="thumb" id="bg_file" accept="image/*" style="padding:3px">
                                         </div>
                                     </td>
                                 </tr>
