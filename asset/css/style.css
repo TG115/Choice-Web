@@ -1,0 +1,153 @@
+
+body {
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	color: white;
+}
+
+.rank_master {
+	background: url(/img/master.webp) -190px -250px;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-weight: 700;
+	/* color: red;
+	font-weight: 700; */
+}
+
+.rank_vibranium {
+	background: url(/img/vibranium.webp) -140px -190px;
+	-webkit-text-fill-color: transparent; 
+	-webkit-background-clip: text; 
+	font-weight: 700;
+	/* color: rgb(255, 57, 255);
+	font-weight: 700; */
+}
+
+.rank_adamantium {
+	background: url(/img/adamantium.webp) -80px -90px;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-weight: 700;
+	/* color: orangered;
+	font-weight: 700; */
+}
+
+.rank_diamond {
+	background: url(/img/diamond.webp) -160px -80px; 
+	-webkit-text-fill-color: transparent; 
+	-webkit-background-clip: text; 
+	font-weight: 700;
+	/* color: skyblue;
+	font-weight: 700; */
+}
+
+.rank_platinum {
+	background: url(/img/platinum.webp) -190px -170px; 
+	-webkit-text-fill-color: transparent; 
+	-webkit-background-clip: text; 
+	font-weight: 700;
+	/* color: green;
+	font-weight: 700; */
+}
+
+.rank_gold {
+	background: url(/img/gold.webp) -140px -40px; 
+	-webkit-text-fill-color: transparent; 
+	-webkit-background-clip: text; 
+	font-weight: 700;
+	/* color:goldenrod;
+	font-weight: 700; */
+}
+
+.rank_silver {
+	background: url(/img/silver.webp) -120px -185px;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-weight: 700;
+	/* color:silver;
+	font-weight: 700; */
+}
+
+.rank_bronze {
+	color:#bd6b00;
+	font-weight: 700;
+}
+
+.rank_iron {
+	color:#c8c8c8;
+	font-weight: 700;
+}
+
+.title_gold {
+	background: url(/img/gold.webp) -140px -40px; 
+	-webkit-text-fill-color: transparent; 
+	-webkit-background-clip: text; 
+	font-weight: 700;
+}
+
+.mini-info {
+	font-size: 0.8em;
+	padding-left: 10px;
+}
+
+.zeus-myinfo {
+	background-color: #645641!important;
+}
+
+.dropdown-item {
+	font-size: 0.8em !important;
+	font-weight: 500 !important;
+}
+
+.fw-bold {
+	font-weight: bold;
+}
+
+.color-gm {
+	color: rgb(255, 0, 0) !important;
+}
+
+.color-admin {
+	color: rgb(0, 197, 201) !important;
+}
+
+.color-staff {
+	color: rgb(142, 212, 0) !important;
+}
+
+li {
+	margin-bottom: 5px;
+}
+
+body {
+	background-color: #fdfdff;
+}
+
+.dual-table th {
+	width: 20%;
+}
+
+#topButton {position: fixed; right: 2%; bottom: 50px; display: none; z-index: 999;}
+
+.zoom_content {
+	overflow: hidden;
+}
+.card-text img {
+	width:100%;
+	padding: 5px;
+}
+
+table a {
+	color: #212529;
+}
+
+.bbs_title {
+	width: 400px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.bbs_noti {
+	background-color:rgb(255, 250, 238);
+	font-weight: bold;
+}
