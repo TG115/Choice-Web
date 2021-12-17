@@ -17,6 +17,8 @@ function fAPI() {
         $flag = '원격배송';
     } elseif ($filename == 'quicklog.php') {
         $flag = '퀵배송';
+	} elseif ($filename == 'registerlog.php') {
+        $flag = '회원가입 선물';
     } else return;
 
 	$r_cnt = libQuery("

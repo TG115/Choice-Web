@@ -17,6 +17,7 @@
                 <a class="dropdown-item" href="/adm/items/giveItem.php">아이템 지급</a>
                 <a class="dropdown-item" href="/adm/items/giveLog.php">아이템 지급 로그</a>
                 <a class="dropdown-item" href="/adm/items/quickLog.php">퀵배송 로그</a>
+                <a class="dropdown-item" href="/adm/items/registerLog.php">회원가입 선물 로그</a>
               </div>  
             </li>
           <? } ?>

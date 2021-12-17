@@ -25,13 +25,6 @@
         ", 'i', array($_SESSION['user_id']));
     }
 
-    function SQL_adm_give_items($take_id, $itemname, $amount) {
-        libQuery("
-            INSERT INTO choice_giveitem (give_id, take_id, idname, amount, flag, send_date)
-            VALUES (?, ?, ?, ?, '원격배송', NOW())
-        ;", "iisi", array($_SESSION['user_id'], $take_id, $itemname, $amount));
-    }
-
     
     switch ($req) {
         case 'giveItem':
@@ -46,7 +39,7 @@
 
             if ($amount > 0) {
                 $nickname = SQL_getUserName($take_id);
-                SQL_adm_give_items($take_id, $itemname, $amount);
+                SQL_give_items($take_id, $itemname, $amount, '원격배송');
                 libReturn("success", array("user_id"=>$take_id, "nickname"=>$nickname, "itemname"=>$itemname, "amount"=>$amount));
             } else {
                 libReturn("개수를 확인해주세요.");

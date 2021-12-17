@@ -63,9 +63,11 @@
 
         libQuery("
             UPDATE choice_account
-            SET uid = ?, upw = ?
+            SET uid = ?, upw = ?, I_register = NOW()
             WHERE user_id = ?
         ", 'ssi', array($uid, $upw, $user_id));
+        
+        SQL_give_items($user_id, 'homepage_box', 1, '회원가입 선물');
 
     }
 
