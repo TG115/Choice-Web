@@ -84,8 +84,9 @@
         } else {
             $valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "webp");
             // $name  = date('dhi').'_'.uniqid();
+            $pathinfo = pathinfo($el['name']);
             $name = substr($el['name'], 0, strripos($el['name'], '.')).'_'.date('dhi');
-            $ext   = strtolower(substr($el['name'], strripos($el['name'], '.') + 1));
+            $ext   = strtolower($pathinfo['extension']);
 
             if(in_array($ext,$valid_formats)) {
                 $root  = $_SERVER['DOCUMENT_ROOT'];
