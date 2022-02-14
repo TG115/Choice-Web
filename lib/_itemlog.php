@@ -23,7 +23,7 @@ function fAPI() {
 
 	$r_cnt = libQuery("
 		SELECT COUNT(*) AS cnt
-		FROM choice_giveitem AS g
+		FROM hive_giveitem AS g
 		WHERE g.flag = '$flag' $where
 	");
 
@@ -33,9 +33,9 @@ function fAPI() {
 
 	$r_list = libQuery("
 		SELECT g.*, a.nickname AS give_nickname, b.nickname AS take_nickname
-		FROM choice_giveitem AS g
-        LEFT JOIN choice_account AS a ON a.user_id = g.give_id
-        LEFT JOIN choice_account AS b ON b.user_id = g.take_id
+		FROM hive_giveitem AS g
+        LEFT JOIN hive_account AS a ON a.user_id = g.give_id
+        LEFT JOIN hive_account AS b ON b.user_id = g.take_id
 		WHERE g.flag = '$flag' $where
 		ORDER BY send_date DESC
 		LIMIT ?

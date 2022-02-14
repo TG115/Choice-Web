@@ -1,12 +1,12 @@
 <? 
 if (!isset($_SESSION)) session_start();
-if (!isset($_SESSION['choice_id'])) {
+if (!isset($_SESSION['hive_id'])) {
     echo '<script>alert("로그인 후 이용하실 수 있습니다."); location.href="/login.php";</script>';
 }
 include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
 
 <? include $_SERVER["DOCUMENT_ROOT"]."/inc/head.php" ?>
-	<title>FiveM Choice - 마이페이지</title>
+	<title>FiveM Hive - 마이페이지</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
                                 <th>고유번호</th>
                                 <td><?=$_SESSION['user_id']?></td>
                                 <th>닉네임</th>
-                                <td><?=$_SESSION['choice_nickname']?></td>
+                                <td><?=$_SESSION['hive_nickname']?></td>
                             </tr>
                             <tr>
                                 <th>차량번호</th>
@@ -110,7 +110,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="choice_nowpw" placeholder="비밀번호를 입력하세요." type="password">
+                                    <input class="form-control" name="hive_nowpw" placeholder="비밀번호를 입력하세요." type="password">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -119,7 +119,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="choice_pw" placeholder="비밀번호를 입력하세요." type="password">
+                                    <input class="form-control" name="hive_pw" placeholder="비밀번호를 입력하세요." type="password">
                                 </div>
                                 <div class="form-text text-white-50 mini-info">비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.</div>
                             </div>
@@ -129,7 +129,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="choice_pw2" placeholder="비밀번호를 한번 더 입력하세요" type="password">
+                                    <input class="form-control" name="hive_pw2" placeholder="비밀번호를 한번 더 입력하세요" type="password">
                                 </div>
                             </div>
                             <div class="text-center">

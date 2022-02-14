@@ -8,7 +8,7 @@
 
         $r = libQuery("
             SELECT COUNT(*) AS cnt
-            FROM choice_account
+            FROM hive_account
             WHERE user_id = ?
         ", 'i', array($user_id));
 
@@ -19,7 +19,7 @@
 
         $r = libQuery("
             SELECT logincode
-            FROM choice_account
+            FROM hive_account
             WHERE user_id = ?
         ", 'i', array($user_id));
 
@@ -30,7 +30,7 @@
 
         $r = libQuery("
             SELECT COUNT(*) AS cnt
-            FROM choice_account
+            FROM hive_account
             WHERE uid = ?
         ", 's', array($id));
 
@@ -41,7 +41,7 @@
 
         $r = libQuery("
             SELECT uid
-            FROM choice_account
+            FROM hive_account
             WHERE user_id = ?
         ", 'i', array($user_id));
 
@@ -51,7 +51,7 @@
     function SQL_setting_code($user_id, $code) {
 
         libQuery("
-            UPDATE choice_account
+            UPDATE hive_account
             SET logincode = ?
             WHERE user_id = ?
         ", 'si', array($code, $user_id));
@@ -62,7 +62,7 @@
         $upw = password_hash($upw, PASSWORD_DEFAULT);
 
         libQuery("
-            UPDATE choice_account
+            UPDATE hive_account
             SET uid = ?, upw = ?, I_register = NOW()
             WHERE user_id = ?
         ", 'ssi', array($uid, $upw, $user_id));
@@ -90,20 +90,20 @@
             break;
         
         case 'signup':
-            if ($_POST['choice_id']) {
-                if (SQL_get_ID($_POST['choice_id']) == 0) {
-                    if ($_POST['choice_pw']) {
-                        if ($_POST['choice_pw2']) {
-                            if ($_POST['choice_pw'] == $_POST['choice_pw2']) {
-                                if ($_POST['choice_user_id']) {
-                                    $hasUserId = SQL_get_user_id($_POST['choice_user_id']);
+            if ($_POST['hive_id']) {
+                if (SQL_get_ID($_POST['hive_id']) == 0) {
+                    if ($_POST['hive_pw']) {
+                        if ($_POST['hive_pw2']) {
+                            if ($_POST['hive_pw'] == $_POST['hive_pw2']) {
+                                if ($_POST['hive_user_id']) {
+                                    $hasUserId = SQL_get_user_id($_POST['hive_user_id']);
                                     if ($hasUserId) {
-                                        if (!SQL_get_UID($_POST['choice_user_id'])) {
-                                            if (@$_POST['choice_code']) {
-                                                $user_code = SQL_get_logincode($_POST['choice_user_id']);
+                                        if (!SQL_get_UID($_POST['hive_user_id'])) {
+                                            if (@$_POST['hive_code']) {
+                                                $user_code = SQL_get_logincode($_POST['hive_user_id']);
                                                 if ($user_code) {
-                                                    if ($_POST['choice_code'] == $user_code) {
-                                                        SQL_sign_up($_POST['choice_user_id'], $_POST['choice_id'], $_POST['choice_pw']);
+                                                    if ($_POST['hive_code'] == $user_code) {
+                                                        SQL_sign_up($_POST['hive_user_id'], $_POST['hive_id'], $_POST['hive_pw']);
                                                         libReturn('OK');
                                                     } else {
                                                         libReturn('인증번호가 일치하지 않습니다.');

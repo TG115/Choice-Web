@@ -8,7 +8,7 @@
         $upw = password_hash($upw, PASSWORD_DEFAULT);
 
         libQuery("
-            UPDATE choice_account
+            UPDATE hive_account
             SET upw = ?
             WHERE user_id = ?
         ;", 'si', array($upw, $user_id));
@@ -33,7 +33,7 @@
     function SQL_CheckPW($user_id, $pw) {
         $upw = libQuery("
             SELECT upw
-            FROM choice_account
+            FROM hive_account
             WHERE uid = ? AND dflag = FALSE
         ", 's', array($user_id));
 
@@ -44,19 +44,19 @@
     function SQL_GetUserPhone($user_id) {
         return libQuery("
             SELECT phone_bg
-            FROM choice_account
+            FROM hive_account
             WHERE user_id = ?
         ", 'i', array($user_id));
     }
 
     switch($req) {        
         case 'changePW':
-            if ($_POST['choice_nowpw']) {
-                if ($_POST['choice_pw']) {
-                    if ($_POST['choice_pw2']) {
-                        if (SQL_getUserAccount($_SESSION['user_id'], $_POST['choice_nowpw'])) {
-                            if ($_POST['choice_pw'] == $_POST['choice_pw2']) {
-                                SQL_change_password($_SESSION['user_id'], $_POST['choice_pw']);
+            if ($_POST['hive_nowpw']) {
+                if ($_POST['hive_pw']) {
+                    if ($_POST['hive_pw2']) {
+                        if (SQL_getUserAccount($_SESSION['user_id'], $_POST['hive_nowpw'])) {
+                            if ($_POST['hive_pw'] == $_POST['hive_pw2']) {
+                                SQL_change_password($_SESSION['user_id'], $_POST['hive_pw']);
                                 libReturn('OK');
                             } else {
                                 libReturn('변경할 비밀번호가 일치하지 않습니다.');

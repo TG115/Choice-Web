@@ -5,7 +5,7 @@
 	function SQL_give_items($take_id, $itemname, $amount, $option) {
 		
         libQuery("
-            INSERT INTO choice_giveitem (give_id, take_id, idname, amount, flag, send_date)
+            INSERT INTO hive_giveitem (give_id, take_id, idname, amount, flag, send_date)
             VALUES (?, ?, ?, ?, ?, NOW())
         ;", "iisis", array($_SESSION['user_id'] ?? $take_id, $take_id, $itemname, $amount, $option));
     }
@@ -13,7 +13,7 @@
 	function SQL_getUserName($user_id) {
 		$r = libQuery("
 			SELECT nickname
-			FROM choice_account
+			FROM hive_account
 			WHERE user_id = '$user_id'
 		;");
 

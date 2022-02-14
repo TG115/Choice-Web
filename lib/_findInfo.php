@@ -36,10 +36,10 @@
             break;
 
 		case 'changePW':
-			if ($_POST['choice_pw']) {
-				if ($_POST['choice_pw2']) {
-					if ($_POST['choice_pw'] == $_POST['choice_pw2']) {
-						SQL_change_password($_POST['c_user_id'], $_POST['choice_pw']);
+			if ($_POST['hive_pw']) {
+				if ($_POST['hive_pw2']) {
+					if ($_POST['hive_pw'] == $_POST['hive_pw2']) {
+						SQL_change_password($_POST['c_user_id'], $_POST['hive_pw']);
                         if (!isset($_SESSION)) {
                             session_start();
                         }
@@ -61,7 +61,7 @@
 	function SQL_findID($user_id, $logincode) {
 		return libQuery("
 			SELECT nickname, user_id, uid
-			FROM choice_account
+			FROM hive_account
 			WHERE user_id = ? AND logincode = ? AND dflag = FALSE
 		", 'is', array($user_id, $logincode));
 	}
@@ -69,7 +69,7 @@
 	function SQL_findPW($user_id, $id, $logincode) {
 		return libQuery("
 			SELECT user_id, uid
-			FROM choice_account
+			FROM hive_account
 			WHERE user_id = ? AND uid = ? AND logincode = ? AND dflag = FALSE
 		", 'iss', array($user_id, $id, $logincode));
 	}
@@ -78,7 +78,7 @@
         $upw = password_hash($upw, PASSWORD_DEFAULT);
 
         libQuery("
-            UPDATE choice_account
+            UPDATE hive_account
             SET upw = ?
             WHERE user_id = ?
         ;", 'si', array($upw, $user_id));
@@ -88,8 +88,8 @@
 	// if (count($r) == 1) {
 	// 	session_start();
 	// 	SQL_UpdateLastLogin($id);
-	// 	$_SESSION['choice_id'] = $id;
-	// 	$_SESSION['choice_nickname'] = $r[0]['nickname'];
+	// 	$_SESSION['hive_id'] = $id;
+	// 	$_SESSION['hive_nickname'] = $r[0]['nickname'];
 	// 	$_SESSION['user_id'] = $r[0]['user_id'];
 	// 	if ($_SESSION['user_id'] == 1 || $_SESSION['user_id'] == 17) $_SESSION['isadmin'] = true;
 	// 	header('location:/');

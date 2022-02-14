@@ -29,8 +29,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
-	<title>FiveM Choice</title>
-    <meta name="description" content="FiveM Choice Server Management System">
+	<title>FiveM Hive</title>
+    <meta name="description" content="FiveM Hive Server Management System">
     
 	<link href="https://unpkg.com/webkul-micron@1.1.6/dist/css/micron.min.css" type="text/css" rel="stylesheet">
     <script src="https://unpkg.com/webkul-micron@1.1.6/dist/script/micron.min.js" type="text/javascript"></script>

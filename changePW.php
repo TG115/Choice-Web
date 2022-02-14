@@ -8,8 +8,8 @@ if (!isset($_SESSION['changeinfo'])) {
 ?>
 
 <? include $_SERVER["DOCUMENT_ROOT"]."/inc/head.php" ?>
-<? if (isset($_SESSION['choice_id'])) { echo "<script>location.href='/';</script>"; } ?>
-	<title>FiveM Choice - 비밀번호 변경</title>
+<? if (isset($_SESSION['hive_id'])) { echo "<script>location.href='/';</script>"; } ?>
+	<title>FiveM Hive - 비밀번호 변경</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['changeinfo'])) {
 			<div class="header-body text-center mb-3">
 			<div class="row justify-content-center py-3 text-white">
 				<div class="col-xl-5 col-lg-6 col-md-8 px-5">
-				<h1>FiveM Choice Server</h1>
+				<h1>FiveM Hive Server</h1>
 				<p class="text-lead">비밀번호 변경하기</p>
 				</div>
 			</div>
@@ -55,7 +55,7 @@ if (!isset($_SESSION['changeinfo'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="choice_pw" placeholder="비밀번호를 입력하세요." type="password" required>
+                                    <input class="form-control" name="hive_pw" placeholder="비밀번호를 입력하세요." type="password" required>
                                 </div>
                                 <div class="form-text text-white-50 mini-info">비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.</div>
                             </div>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['changeinfo'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="choice_pw2" placeholder="비밀번호를 한번 더 입력하세요" type="password" required>
+                                    <input class="form-control" name="hive_pw2" placeholder="비밀번호를 한번 더 입력하세요" type="password" required>
                                 </div>
                             </div>
                             <div class="text-center">

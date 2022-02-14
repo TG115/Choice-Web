@@ -2,13 +2,13 @@
     include_once $_SERVER['DOCUMENT_ROOT'].'/lib/database.php';
 	$GLOBALS['ret_type'] = basename(__FILE__) == basename($_SERVER["SCRIPT_NAME"]) ? 'ajax' : '';
 
-	$id = $_POST['choice_id'];
-	$pw = $_POST['choice_pw'];
+	$id = $_POST['hive_id'];
+	$pw = $_POST['hive_pw'];
 	
 	function SQL_CheckID($id, $pw) {
         $upw = libQuery("
             SELECT upw
-            FROM choice_account
+            FROM hive_account
             WHERE uid = ? AND dflag = FALSE
         ", 's', array($id));
 
@@ -17,7 +17,7 @@
         if (password_verify($pw, $upw[0]['upw'])) {
             return libQuery("
                 SELECT *
-                FROM choice_account
+                FROM hive_account
                 WHERE uid = ? AND dflag = FALSE
             ", 's', array($id));
         } else return [];
@@ -26,7 +26,7 @@
 
 	function SQL_UpdateLastLogin($id) {
 		return libQuery("
-			UPDATE choice_account
+			UPDATE hive_account
 			SET last_login = NOW()
 			WHERE uid = '$id' AND dflag = FALSE
 		");
@@ -38,8 +38,8 @@
 	if (count($r) == 1) {
 		session_start();
 		SQL_UpdateLastLogin($id);
-		$_SESSION['choice_id'] = $id;
-		$_SESSION['choice_nickname'] = $r[0]['nickname'];
+		$_SESSION['hive_id'] = $id;
+		$_SESSION['hive_nickname'] = $r[0]['nickname'];
 		$_SESSION['user_id'] = $r[0]['user_id'];
 		if ($r[0]['grade'] > 0) $_SESSION['isadmin'] = true;
 		header('location:/');

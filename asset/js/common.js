@@ -1,7 +1,7 @@
 function setting_code(user_id) {
     if (user_id == "") {
         alert('고유번호를 입력해주세요!');
-        $('input[name="choice_user_id"]').focus();
+        $('input[name="hive_user_id"]').focus();
     } else {
 
         $.ajax({
@@ -23,7 +23,7 @@ function setting_code(user_id) {
                             <div class="input-group-prepend"> \
                                 <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span> \
                             </div> \
-                                <input class="form-control" name="choice_code" placeholder="인증번호를 입력하세요." required> \
+                                <input class="form-control" name="hive_code" placeholder="인증번호를 입력하세요." required> \
                             </div> \
                         <div class="form-text text-white-50 mini-info">초이스 서버에 접속하여 휴대폰(K) -> [관리] -> [홈페이지 인증코드] 메뉴를 통해 확인하실 수 있습니다.</div> \
                     ');
@@ -74,28 +74,28 @@ function signup(data) {
         return;
     }
 
-    if (checkSpace($('input[name="choice_id"]').val())) {
+    if (checkSpace($('input[name="hive_id"]').val())) {
         alert('아이디에 공백을 제거해주세요.');
         return;
     }
 
-    if (checkSpecial($('input[name="choice_id"]').val())) {
+    if (checkSpecial($('input[name="hive_id"]').val())) {
         alert('아이디에 특수문자를 사용하실 수 없습니다.');
         return;
     }
 
-    if (checkPasswordPattern($('input[name="choice_pw"]').val())) {
+    if (checkPasswordPattern($('input[name="hive_pw"]').val())) {
         alert("비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.");
         return;
     }
 
-    if (checkSpace($('input[name="choice_user_id"]').val())) {
+    if (checkSpace($('input[name="hive_user_id"]').val())) {
         alert('고유번호에 공백을 제거해주세요.');
         return;
     }
 
-    if (typeof $('input[name="choice_code"]').val() != 'undefined') {
-        if (checkSpace($('input[name="choice_code"]').val())) {
+    if (typeof $('input[name="hive_code"]').val() != 'undefined') {
+        if (checkSpace($('input[name="hive_code"]').val())) {
             alert('인증번호에 공백을 제거해주세요.');
             return;
         }
@@ -130,7 +130,7 @@ function changePW(data) {
         return;
     }
 
-    if (checkPasswordPattern($('input[name="choice_pw"]').val())) {
+    if (checkPasswordPattern($('input[name="hive_pw"]').val())) {
         alert("비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.");
         return;
     }
@@ -162,7 +162,7 @@ function changePW2(data) {
         return;
     }
 
-    if (checkPasswordPattern($('input[name="choice_pw"]').val())) {
+    if (checkPasswordPattern($('input[name="hive_pw"]').val())) {
         alert("비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.");
         return;
     }

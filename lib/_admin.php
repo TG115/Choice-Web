@@ -1,6 +1,6 @@
 <?
     if (!isset($_SESSION)) session_start();
-    if (!isset($_SESSION['choice_id'])) {
+    if (!isset($_SESSION['hive_id'])) {
         echo '<script>alert("로그인 후 이용하실 수 있습니다."); location.href="/login.php";</script>';
         if (!isset($_SESSION['isadmin'])) {
             echo '<script>alert("이용 권한이 없습니다."); location.href="/login.php";</script>';
@@ -17,7 +17,7 @@
     function SQL_recent_give_items() {
         return libQuery("
             SELECT idname, itemname, COUNT(*) AS cnt
-            FROM choice_giveitem
+            FROM hive_giveitem
             WHERE give_id = ?
             GROUP BY idname
             ORDER BY cnt DESC

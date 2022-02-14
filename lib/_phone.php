@@ -13,14 +13,14 @@
 
             $path = libQuery("
                 SELECT phone_bg
-                FROM choice_account
+                FROM hive_account
                 WHERE user_id = ?
             ", 'i', array($_SESSION['user_id']))[0]['phone_bg'];
             
             if ($path) @unlink($_SERVER["DOCUMENT_ROOT"].$path);
 
 			libQuery("
-                UPDATE choice_account
+                UPDATE hive_account
                 SET phone_bg = ?
                 WHERE user_id = ?
             ", 'si', array($thumb, $_SESSION['user_id']));
@@ -32,13 +32,13 @@
     function SQL_ResetThumb() {
         $path = libQuery("
             SELECT phone_bg
-            FROM choice_account
+            FROM hive_account
             WHERE user_id = ?
         ", 'i', array($_SESSION['user_id']))[0]['phone_bg'];
         if ($path) @unlink($_SERVER["DOCUMENT_ROOT"].$path);
 
         libQuery("
-            UPDATE choice_account
+            UPDATE hive_account
             SET phone_bg = ''
             WHERE user_id = ?
         ", 'i', array($_SESSION['user_id']));
