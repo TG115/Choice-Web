@@ -1,6 +1,28 @@
 <?
     include_once $_SERVER['DOCUMENT_ROOT'].'/lib/database.php';
 
+	function SQL_pointLog($user_id, $category, $text, $point) {
+		$r = libQuery("
+			SELECT point
+			FROM hive_account
+			WHERE user_id = ?
+		;", "i", array($user_id));
+
+		$remain_point = $r[0]['point'] + $point;
+
+		libQuery("
+			INSERT INTO hive_point_log
+			VALUES (?, ?, ?, ?, ?, NOW())
+		;", "issii", array($user_id, $category, $text, $point, $remain_point));
+	}
+
+	function SQL_setUserPoint($user_id, $point) {
+		libQuery("
+			UPDATE hive_account
+			SET point = point + ?
+			WHERE user_id = ?
+		;", 'ii', array($point, $user_id));
+	}
 
 	function SQL_give_items($take_id, $itemname, $amount, $option) {
 		

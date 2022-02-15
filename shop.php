@@ -69,6 +69,7 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
             <? foreach ($r_list as $el) { ?>
                 <div class="col-lg-4 mb-4">
                     <form autocomplete="off">
+                        <input type="hidden" name="idx" value="<?=$el['idx']?>">
                         <input type="hidden" name="itemname" value="<?=$el['name']?>">
                         <input type="hidden" name="itemprice" value="<?=($el['price'] * (100 - $el['sale']) / 100)?>">
                         <div class="card h-100 shadow bg-secondary">
@@ -76,9 +77,9 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
                             
                             
                             <ul class="list-group list-group-flush">
-                                <div class="text-center" style="height: 250px;">
+                                <div class="text-center" style="height: 250px; max-width:100%">
                                     <a href="<?=$el['thumb']?>" target="_blank">
-                                        <img src="<?=$el['thumb']?>" alt="" style="height:250px;">
+                                        <img src="<?=$el['thumb']?>" alt="" style="height:250px; max-width:100%">
                                     </a>
                                 </div>
                                 <li class="list-group-item bg-secondary" style="height:100px"><?=$el['content']?></li>
@@ -128,15 +129,16 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
             return;
         }
 
-        const itemname = frm[0].value;
-        const amount = frm[2].value;
-        const itemprice = frm[1].value * amount;
+        const idx = frm[0].value;
+        const itemname = frm[1].value;
+        const amount = frm[3].value;
+        const itemprice = frm[2].value * amount;
 
         if (confirm(`${itemprice}포인트를 사용하여 [${itemname}] ${amount}개를 구매하시겠습니까?`)) {
             document.xhr = $.ajax({
-                url: 'pointshop.proc.php',
+                url: '/lib/_pointshop.php',
                 type: 'post',
-                data: "req=buy&itemname=" + itemname + "&amount=" + amount,
+                data: "req=buy&idx=" + idx + "&amount=" + amount,
                 dataType: 'json',
                 success: function (r) {
                     console.log(r);
