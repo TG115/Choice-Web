@@ -11,6 +11,18 @@
           <? if (isset($_SESSION['isadmin'])) {?>
             <li class="nav-item dropdown px-2">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownItems" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mb-0 text-sm">상점 관리</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownItems">
+                <a class="dropdown-item" href="/adm/shop/?cate=총기">총기 상점 관리</a>
+                <a class="dropdown-item" href="/adm/shop/?cate=차량">차량 상점 관리</a>
+                <a class="dropdown-item" href="/adm/shop/?cate=물약">물약 상점 관리</a>
+                <a class="dropdown-item" href="/adm/shop/?cate=잡화">잡화 상점 관리</a>
+                <a class="dropdown-item" href="/adm/shop/?cate=이벤트">이벤트 상점 관리</a>
+              </div>  
+            </li>
+            <li class="nav-item dropdown px-2">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownItems" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mb-0 text-sm">아이템 관리</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownItems">

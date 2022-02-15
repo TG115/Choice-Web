@@ -1,7 +1,7 @@
 
 <? include $_SERVER["DOCUMENT_ROOT"]."/inc/head.php" ?>
-<? if (isset($_SESSION['choice_id'])) { echo "<script>location.href='/';</script>"; } ?>
-  <title>FiveM Choice - 아이디 찾기</title>
+<? if (isset($_SESSION['Hive_id'])) { echo "<script>location.href='/';</script>"; } ?>
+  <title>FiveM Hive - 아이디 찾기</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 			<div class="header-body text-center mb-3">
 			<div class="row justify-content-center py-3 text-white">
 				<div class="col-xl-5 col-lg-6 col-md-8 px-5">
-				<h1>FiveM Choice Server</h1>
+				<h1>FiveM Hive Server</h1>
 				<p class="text-lead">아이디 찾기</p>
 				</div>
 			</div>

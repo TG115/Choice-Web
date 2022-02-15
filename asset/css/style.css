@@ -153,3 +153,8 @@ table a {
   background-color: rgb(255, 250, 238);
   font-weight: bold;
 }
+
+.cancel-line {
+  color:grey;
+  text-decoration-line:line-through;
+}
