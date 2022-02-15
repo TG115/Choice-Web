@@ -32,6 +32,7 @@ function SQL_UploadItem($el) {
     $category = $el['i_category'];
     $name = $el['i_name'];
     $code = $el['i_code'];
+    $content = $el['i_content'];
     $amount = $el['i_amount'];
     $price = $el['i_price'];
     $sale = $el['i_sale'];
@@ -39,14 +40,14 @@ function SQL_UploadItem($el) {
     if ($idx) {
         libQuery("
             UPDATE hive_shop
-            SET category = ?, name = ?, code = ?, amount = ?, price = ?, sale = ?, status = ?, mdate = NOW()
+            SET category = ?, name = ?, code = ?, content = ?, amount = ?, price = ?, sale = ?, status = ?, mdate = NOW()
             WHERE idx = ?
-        ", 'sssiiiii', array($category, $name, $code, $amount, $price, $sale, $status, $idx));
+        ", 'ssssiiiii', array($category, $name, $code, $content, $amount, $price, $sale, $status, $idx));
     } else {
         libQuery("
-            INSERT INTO hive_shop (category, name, code, amount, price, sale, status)
+            INSERT INTO hive_shop (category, name, code, content, amount, price, sale, status)
             VALUES (?, ?, ?, ?, ?, ?, ?)
-        ;", 'sssiiii', array($category, $name, $code, $amount, $price, $sale, $status));
+        ;", 'ssssiiii', array($category, $name, $code, $content, $amount, $price, $sale, $status));
 
         $idx = libQuery("SELECT idx FROM hive_shop ORDER BY idx DESC LIMIT 1")[0]['idx'];
     }
@@ -66,7 +67,7 @@ function SQL_DeleteItem($idx) {
     echo '<script>alert("삭제 되었습니다."); location.href="/adm/shop/?cate=' . $_GET['cate'] . '";</script>';
 }
 
-if ($_GET['ACT'] == 'D') {
+if (@$_GET['ACT'] == 'D') {
     SQL_DeleteItem($_GET['idx']);
 } else {
     SQL_UploadItem($_POST);

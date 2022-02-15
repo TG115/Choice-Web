@@ -67,7 +67,7 @@ if ($idx) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" name="i_name" placeholder="유저에게 보여질 아이템 이름을 입력하세요." type="text" value='<?=$idx?$r['name']:''?>'>
+                                    <input class="form-control" name="i_name" placeholder="유저에게 보여질 아이템 이름을 입력하세요. (7자 이하 권장)" type="text" value='<?=$idx?$r['name']:''?>'>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -77,6 +77,15 @@ if ($idx) {
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
                                     <input class="form-control" name="i_code" placeholder="게임 내 아이템 코드를 입력하세요." type="text" value='<?=$idx?$r['code']:''?>'>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="form-text h6 fw-bold text-light">한줄 설명</span>
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control" name="i_content" placeholder="아이템에 대한 한줄 설명을 입력하세요." type="text" value='<?=$idx?$r['content']:''?>'>
                                 </div>
                             </div>
                             <div class="form-group">

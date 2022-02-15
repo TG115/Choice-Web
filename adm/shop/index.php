@@ -88,15 +88,15 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
 			</table>
 			<nav aria-label="Page navigation">
 				<ul class="pagination justify-content-end">
-					<?if ($startPage > 1) {?><li class="page-item"><a class="page-link" href="?page=1">처음</a></li><?}?>
-					<?if ($cur_page > 1) {?><li class="page-item"><a class="page-link" href="?page=<?=$cur_page - 1?>">이전</a></li><?}?>
+					<?if ($startPage > 1) {?><li class="page-item"><a class="page-link" href="?page=1&cate=<?=$_GET['cate']?>">처음</a></li><?}?>
+					<?if ($cur_page > 1) {?><li class="page-item"><a class="page-link" href="?page=<?=$cur_page - 1?>&cate=<?=$_GET['cate']?>">이전</a></li><?}?>
 					<? if ($r_tot_cnt) for ($i = $startPage; $i <= $endPage; $i++) { ?>
 					<li class="page-item<?=$cur_page == $i ? ' active' : '' ?>">
-						<a class="page-link" href="?page=<?=$i?>"><?=$i?></a>
+						<a class="page-link" href="?page=<?=$i?>&cate=<?=$_GET['cate']?>"><?=$i?></a>
 					</li>
 					<? } ?>
-					<?if ($cur_page < $r_tot_cnt) {?><li class="page-item"><a class="page-link" href="?page=<?=$cur_page + 1?>">다음</a></li><?}?>
-					<?if ($endPage < $r_tot_cnt) {?><li class="page-item"><a class="page-link" href="?page=<?=$r_tot_cnt?>">끝</a></li><?}?>
+					<?if ($cur_page < $r_tot_cnt) {?><li class="page-item"><a class="page-link" href="?page=<?=$cur_page + 1?>&cate=<?=$_GET['cate']?>">다음</a></li><?}?>
+					<?if ($endPage < $r_tot_cnt) {?><li class="page-item"><a class="page-link" href="?page=<?=$r_tot_cnt?>&cate=<?=$_GET['cate']?>">끝</a></li><?}?>
 				</ul>
 
 			</nav>
@@ -107,11 +107,6 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
 
 <? include $_SERVER["DOCUMENT_ROOT"]."/inc/footer.php" ?>
 
-<script>
-    function idSearch(num) {
-        location.href='?user_id=' + num;
-    }
-</script>
 </body>
 
 </html>

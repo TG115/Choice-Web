@@ -5,11 +5,9 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/lib/db_function.php';
 function fAPI() {
 	$page = (int)(@$_GET['page'] ?: 1);
 	$category = @$_GET['cate'];
-	$where = '';
-	if ($category) {
-		$where = "AND category = '$category'";
-	}
-	$max_row = 20;
+	$where = "AND category = '$category'";
+	if (basename($_SERVER["SCRIPT_NAME"]) === 'shop.php') $where .= ' AND status = TRUE';
+	$max_row = 15;
 	$offset = ($page - 1) * $max_row;
 
 	$r_cnt = libQuery("
