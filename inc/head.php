@@ -19,6 +19,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="http://soojeong.kro.kr/HIVE.ico">
+
     <!-- Bootstrap core CSS -->
     <link href="/asset/vendor/bootstrap/css/bootstrap.min.css?ver=1.10" rel="stylesheet">
 
