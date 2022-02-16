@@ -74,7 +74,7 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_pointlog.php';
 				<? foreach ($r_list as $el) { ?>
 					<tr>
 						<td><?=SQL_getUserName($el['user_id'])?> [<?=$el['user_id']?>]</td>
-						<td><?=$el['point']?></td>
+						<td><?=number_format($el['point'])?></td>
 						<td><?=$el['text']?></td>
 						<td><?=$el['date']?></td>
 					</tr>

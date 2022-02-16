@@ -89,7 +89,7 @@ body {
   padding-left: 10px;
 }
 
-.zeus-myinfo {
+.hive-myinfo {
   background-color: #645641 !important;
 }
 
@@ -150,8 +150,12 @@ table a {
 }
 
 .bbs_noti {
-  background-color: rgb(255, 250, 238);
+  background-color: rgba(0, 0, 0, .25)!important;
   font-weight: bold;
+}
+
+.bg-secondary a {
+  color: white;
 }
 
 .cancel-line {

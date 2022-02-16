@@ -24,12 +24,12 @@
 	<link rel="shortcut icon" href="http://soojeong.kro.kr/HIVE.ico">
 
     <!-- Bootstrap core CSS -->
-    <link href="/asset/vendor/bootstrap/css/bootstrap.min.css?ver=1.10" rel="stylesheet">
+    <link href="/asset/vendor/bootstrap/css/bootstrap.min.css?ver=1.11" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/asset/css/modern-business.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/asset/css/style.css?ver=1.10">
+    <link rel="stylesheet" href="/asset/css/style.css?ver=1.11">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 

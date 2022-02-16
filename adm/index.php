@@ -1,7 +1,7 @@
 <? include_once $_SERVER["DOCUMENT_ROOT"]."/adm/adm.proc.php" ?>
 
 <? include $_SERVER["DOCUMENT_ROOT"]."/inc/head.php" ?>
-	<title>Premium RPG ZEUS - 관리자페이지</title>
+	<title>FiveM Hive - 관리자페이지</title>
 </head>
 
 <body>

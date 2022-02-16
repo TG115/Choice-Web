@@ -49,6 +49,19 @@
                 <a class="dropdown-item" href="/shop.php?cate=이벤트">이벤트 상점</a>
               </div>  
             </li>
+            <li class="nav-item dropdown px-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCommunity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              커뮤니티
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownCommunity">
+              <a class="dropdown-item" href="/community/notice.php">공지사항</a>
+              <a class="dropdown-item" href="/community/freeboard.php">자유 게시판</a>
+              <a class="dropdown-item" href="/community/eventboard.php">이벤트 게시판</a>
+              <a class="dropdown-item" href="/community/tipboard.php">꿀팁 게시판</a>
+              <a class="dropdown-item" href="/community/qnaboard.php">질문 게시판</a>
+              <!-- <a class="dropdown-item" href="#">GM 노트</a> -->
+            </div>
+          </li>
           <? } ?>
 
           <li class="nav-item dropdown px-2">

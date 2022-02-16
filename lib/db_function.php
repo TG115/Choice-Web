@@ -42,4 +42,32 @@
 		return $r[0]['nickname'] ?? '알 수 없음';
 	}
 
+	function SQL_Get_bbs_like($idx) {
+		$r = libQuery("
+			SELECT COUNT(*) AS cnt
+			FROM hive_bbs_likes
+			WHERE idx = ?
+		;", "i", array($idx));
+	
+		return $r[0]['cnt'];
+	}
+
+	function SQL_Get_bbs_comment($idx) {
+		$r = libQuery("
+			SELECT COUNT(*) AS cnt
+			FROM hive_bbs_comment
+			WHERE idx = ? AND dflag=0
+		;", "i", array($idx));
+	
+		return $r[0]['cnt'];
+	}
+
+
+	function isAdminId($user_id) {
+		return (
+			$user_id == 1 ||
+			$user_id == 9
+		);
+	}
+
 ?>
