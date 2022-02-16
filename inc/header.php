@@ -1,3 +1,4 @@
+<? include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_menu.php"; ?>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="http://soojeong.kro.kr"><img src="/asset/img/HIVE.png" width="40px"> FiveM Hive</a>
@@ -51,6 +52,7 @@
               <span class="mb-0 text-sm  font-weight-bold"><?= $_SESSION['hive_nickname'] ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMypage">
+              <a class="dropdown-item" href="/pointlog.php">내 포인트 : <?= number_format(SQL_myPoint($_SESSION['user_id']))?></a>
               <a class="dropdown-item" href="/">마이 페이지</a>
               <a class="dropdown-item" href="/logout.php">로그아웃</a>
             </div>
