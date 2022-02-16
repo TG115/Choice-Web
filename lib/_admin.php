@@ -46,6 +46,21 @@
             }
             break;
 
+        case 'givePoint':
+            $take_id = $_POST['take_id'];
+            $amount = $_POST['give_amount'];
+
+            if ($amount > 0) {
+                $give_id = $_SESSION['user_id'];
+                $nickname = SQL_getUserName($take_id);
+                SQL_pointLog($take_id, "포인트 지급", SQL_getUserName($give_id) . " [{$give_id}] 님으로부터 수령", $amount);
+                SQL_setUserPoint($take_id, $amount);
+                libReturn("success", array("user_id"=>$take_id, "nickname"=>$nickname, "itemname"=>"포인트", "amount"=>$amount));
+            } else {
+                libReturn("개수를 확인해주세요.");
+            }
+            break;
+
         case 'checkId':
             $take_id = $_POST['take_id'];
             $nickname = SQL_getUserName($take_id);
