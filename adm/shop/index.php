@@ -1,6 +1,6 @@
 <? include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_admin.php" ?>
 
-
+<? if (!in_array($_GET['cate'], ['총기','차량','물약','잡화','이벤트'])) { ?> <script>alert('존재하지 않는 페이지입니다.'); location.href='/';</script><?}?>
 <?
 $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php'; 
 

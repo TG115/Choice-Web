@@ -11,7 +11,7 @@
 
           <? if (isset($_SESSION['isadmin'])) {?>
             <li class="nav-item dropdown px-2">
-              <a class="nav-link dropdown-toggle" href="#" id="adm_shop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" style="color:mediumpurple" href="#" id="adm_shop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mb-0 text-sm">상점 관리</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adm_shop">
@@ -23,7 +23,7 @@
               </div>  
             </li>
             <li class="nav-item dropdown px-2">
-              <a class="nav-link dropdown-toggle" href="#" id="adm_item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" style="color:mediumpurple" href="#" id="adm_item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mb-0 text-sm">아이템 관리</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adm_item">
@@ -37,19 +37,20 @@
                 <a class="dropdown-item" href="/adm/items/registerLog.php">회원가입 선물 로그</a>
               </div>  
             </li>
-            <li class="nav-item dropdown px-2">
-              <a class="nav-link dropdown-toggle" href="#" id="pointshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mb-0 text-sm">포인트 상점</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="pointshop">
-                <a class="dropdown-item" href="/shop.php?cate=총기">총기 상점</a>
-                <a class="dropdown-item" href="/shop.php?cate=차량">차량 상점</a>
-                <a class="dropdown-item" href="/shop.php?cate=물약">물약 상점</a>
-                <a class="dropdown-item" href="/shop.php?cate=잡화">잡화 상점</a>
-                <a class="dropdown-item" href="/shop.php?cate=이벤트">이벤트 상점</a>
-              </div>  
-            </li>
-            <li class="nav-item dropdown px-2">
+          <? } ?>
+          <li class="nav-item dropdown px-2">
+            <a class="nav-link dropdown-toggle" href="#" id="pointshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mb-0 text-sm">포인트 상점</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="pointshop">
+              <a class="dropdown-item" href="/shop.php?cate=총기">총기 상점</a>
+              <a class="dropdown-item" href="/shop.php?cate=차량">차량 상점</a>
+              <a class="dropdown-item" href="/shop.php?cate=물약">물약 상점</a>
+              <a class="dropdown-item" href="/shop.php?cate=잡화">잡화 상점</a>
+              <a class="dropdown-item" href="/shop.php?cate=이벤트">이벤트 상점</a>
+            </div>  
+          </li>
+          <li class="nav-item dropdown px-2">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCommunity" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               커뮤니티
             </a>
@@ -62,8 +63,6 @@
               <!-- <a class="dropdown-item" href="#">GM 노트</a> -->
             </div>
           </li>
-          <? } ?>
-
           <li class="nav-item dropdown px-2">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMypage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="mb-0 text-sm  font-weight-bold"><?= $_SESSION['hive_nickname'] ?></span>
