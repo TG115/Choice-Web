@@ -46,7 +46,7 @@ function SQL_UploadItem($el) {
     } else {
         libQuery("
             INSERT INTO hive_shop (category, name, code, content, amount, price, sale, status)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ;", 'ssssiiii', array($category, $name, $code, $content, $amount, $price, $sale, $status));
 
         $idx = libQuery("SELECT idx FROM hive_shop ORDER BY idx DESC LIMIT 1")[0]['idx'];

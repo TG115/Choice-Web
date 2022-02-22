@@ -18,12 +18,12 @@
         return array("idname"=>$idname, "price"=>$price, "itemname"=>$name, "amount"=>$amount);
     }
 
-    function SQL_buy_items($user_id, $itemInfo) {
+    function SQL_buy_items($user_id, $itemInfo, $itemname, $amount, $price) {
 
         libQuery("
-            INSERT INTO hive_giveitem (user_id, idname, itemname, amount, price, flag, wdate)
+            INSERT INTO hive_giveitem (give_id, take_id, idname, itemname, amount, flag, send_date)
             VALUES (?, ?, ?, ?, ?, '구매완료', NOW())
-        ;", "issii", array($user_id, $itemInfo['idname'], "{$itemInfo['name']} {$itemInfo['amount']}개", $amount, $itemInfo['price'] * $amount));
+        ;", "iissi", array($user_id, $user_id, $itemInfo['idname'], "{$itemname} {$amount}개", $amount));
     }
 
     function SQL_get_Mypoint($user_id) {
@@ -50,7 +50,7 @@
                 if ($myPoint >= $price) {
                     SQL_pointLog($user_id, "아이템 구매", "[" . $itemname ."] " . $amount . "개", ($price * -1));
                     SQL_setUserPoint($user_id, ($price * -1));
-                    SQL_buy_items($user_id, $itemInfo);
+                    SQL_buy_items($user_id, $itemInfo, $itemname, $amount, $price);
                     libReturn("success", array("itemname"=>$itemname, "amount"=>$amount, "price"=>$price));
                 } else {
                     libReturn("보유 포인트가 부족합니다.");
