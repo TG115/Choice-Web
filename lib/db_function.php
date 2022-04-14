@@ -64,10 +64,35 @@
 
 
 	function isAdminId($user_id) {
-		return (
-			$user_id == 1 ||
-			$user_id == 9
-		);
+		$r = false;
+		$row = libQuery("
+			SELECT dvalue
+			FROM vrp_user_data
+			WHERE user_id = ? AND dkey = ?
+		", 'is', array($user_id,'vRP:datatable'));
+
+		if (isset($row[0])) {
+			$dvalue = $row[0]['dvalue'];
+			$data = json_decode($dvalue, true);
+			$groups = $data['groups'];
+
+			$adm = [
+				'rorasujeong', 
+				'namu1129',
+				'superadmins',
+				'normaladmins',
+				'testadmins'
+			];
+			
+			foreach($adm as $group) {
+				if (array_key_exists($group, $groups)) {
+					$r = true;
+					break;
+				}
+			}
+		}
+    
+    	return $r;
 	}
 
 ?>
