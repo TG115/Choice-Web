@@ -29,7 +29,7 @@
     <!-- Custom styles for this template -->
     <link href="/asset/css/modern-business.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="/asset/css/style.css?ver=1.11">
+    <link rel="stylesheet" href="/asset/css/style.css?ver=1.12">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 

@@ -38,6 +38,9 @@
               </div>  
             </li>
           <? } ?>
+          <li class="nav-item px-2">
+            <a class="nav-link" href="/ranking.php">서버 랭킹</a>
+          </li>
           <li class="nav-item dropdown px-2">
             <a class="nav-link dropdown-toggle" href="#" id="pointshop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="mb-0 text-sm">포인트 상점</span>
@@ -75,10 +78,10 @@
             </div>
           </li>
         <? } else { ?>
-		  <li class="nav-item px-2">
+          <li class="nav-item px-2">
             <a class="nav-link" href="/login.php">로그인</a>
           </li>
-		  <? }?>
+        <? }?>
         </ul>
       </div>
     </div>
