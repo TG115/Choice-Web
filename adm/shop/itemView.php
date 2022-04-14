@@ -145,8 +145,8 @@ if ($idx) {
                                 </table>
                             </div>
                             <div class="text-center">
+                            <?if ($idx) { ?><input type="button" class="btn btn-danger m-4" onclick="deleteItem(<?=$idx?>,'<?=$_GET['cate']?>')" value="삭제하기"><? } ?>
                                 <input type="submit" class="btn btn-primary m-4" value="저장하기" />
-                                <?if ($idx) { ?><input type="button" class="btn btn-danger m-4" onclick="location.href='/lib/_shopItem.php?ACT=D&idx=<?=$idx?>&cate=<?=$_GET['cate']?>'" value="삭제하기"><? } ?>
                             </div>
                         </form>
                     </div>
@@ -192,6 +192,11 @@ if ($idx) {
         const price = $('input[name="i_price"]').val();
         const per = $('input[name="i_sale"]').val();
         $('#tot_price').html(price * (100 - per) / 100);
+    }
+
+    function deleteItem(idx, cate) {
+        if(confirm('정말 삭제 하시겠습니까?')) 
+            location.href=`/lib/_shopItem.php?ACT=D&idx=${idx}&cate=${cate}`;
     }
     </script>
 </body>

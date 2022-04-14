@@ -73,7 +73,7 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
                         <input type="hidden" name="itemname" value="<?=$el['name']?>">
                         <input type="hidden" name="itemprice" value="<?=($el['price'] * (100 - $el['sale']) / 100)?>">
                         <div class="card h-100 shadow bg-secondary">
-                            <h3 class="card-header"><?=$el['name']?> <?=$el['sale']?'<span class="badge bg-danger rounded-pill text-white" style="font-size:0.5em">'. $el['sale'] .'% SALE</span>':''?></h3>
+                            <h4 class="card-header fw-bold" style="min-height: 85px"><?=$el['name']?> <?=$el['sale']?'<span class="badge bg-danger rounded-pill text-white" style="font-size:0.5em">'. $el['sale'] .'% SALE</span>':''?></h3>
                             
                             
                             <ul class="list-group list-group-flush">
@@ -82,7 +82,7 @@ $r = include $_SERVER["DOCUMENT_ROOT"].'/lib/_shopItems.php';
                                         <img src="<?=$el['thumb']?>" alt="" style="height:250px; max-width:100%">
                                     </a>
                                 </div>
-                                <li class="list-group-item bg-secondary" style="height:100px"><?=$el['content']?></li>
+                                <li class="list-group-item bg-secondary" style="height:150px"><?=$el['content']?></li>
                                 <div class="card-body bg-secondary text-center">
                                     <div class="h5"><span class="<?=$el['sale']?'cancel-line':''?>"><?=number_format($el['price'])?></span> <?=$el['sale']?"-> ".number_format($el['price'] * (100 - $el['sale']) / 100):''?> 포인트</div>
                                     <div class="font-italic"><?=$el['amount']?>개당 가격</div>
