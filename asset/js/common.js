@@ -11,7 +11,7 @@ function setting_code(user_id) {
             dataType: "json",
             success: function (r) {
                 if (r.state == "NOACCOUNT") {
-                    alert('초이스 서버에 가입된 고유번호가 아닙니다.\n만약 가입되어 있다면 서버 접속 후 재시도해주세요.');
+                    alert('하이브 서버에 가입된 고유번호가 아닙니다.\n만약 가입되어 있다면 서버 접속 후 재시도해주세요.');
                 } else {
                     if (r.state == "OK") {
                         alert('인증코드를 발송하였습니다.\n서버에 접속하여 코드를 확인해주세요.');
@@ -25,7 +25,7 @@ function setting_code(user_id) {
                             </div> \
                                 <input class="form-control" name="hive_code" placeholder="인증번호를 입력하세요." required> \
                             </div> \
-                        <div class="form-text text-white-50 mini-info">초이스 서버에 접속하여 휴대폰(K) -> [관리] -> [홈페이지 인증코드] 메뉴를 통해 확인하실 수 있습니다.</div> \
+                        <div class="form-text text-white-50 mini-info">하이브 서버에 접속하여 휴대폰(K) -> [관리] -> [홈페이지 인증코드] 메뉴를 통해 확인하실 수 있습니다.</div> \
                     ');
                 }
             }, error: function (request, status, error) {
