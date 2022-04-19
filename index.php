@@ -31,6 +31,12 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_mypage.php" ?>
         <div class="row justify-content-center">
             <div class="col-12 mb-5">
                 <div class="card shadow bg-secondary border-0 mb-0">
+                    <iframe src="https://api.trackyserver.com/widget/tracky?id=1852535&lang_code=&map=0&version=1&votes=1&plist=1&connect=1&button_name=서버 접속&color1=212B34&color2=33404D&color3=33404D&color4=FFFFFF&color5=FFFFFF&color7=EDF4FF&color8=8a8e94&color9=fff&title=FiveM The Hive Server - 서버 접속 현황" style="width:100%; height: 300px;" allowtransparency="true" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div class="col-12 mb-5">
+                <div class="card shadow bg-secondary border-0 mb-0">
                     <div class="card-header bg-dark">
                         <h5 class="form-text fw-bold text-white">내 정보</h5>
                     </div>

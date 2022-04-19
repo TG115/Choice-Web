@@ -43,6 +43,10 @@ $r = include_once $_SERVER["DOCUMENT_ROOT"]."/lib/_ranking.php";
 		</div>
 	</div>
 
+	<div class="card shadow bg-secondary border-0 mb-5">
+		<iframe src="https://api.trackyserver.com/widget/tracky?id=1852535&lang_code=&map=0&version=1&votes=1&plist=1&connect=1&button_name=서버 접속&color1=212B34&color2=33404D&color3=33404D&color4=FFFFFF&color5=FFFFFF&color7=EDF4FF&color8=8a8e94&color9=fff&title=FiveM The Hive Server - 서버 접속 현황" style="width:100%; height: 300px;" allowtransparency="true" frameborder="0"></iframe>
+	</div>
+
 	<div class="card shadow text-white bg-secondary mb-3">
 		<div class="card-header bg-dark">
 			<h5 class="form-text fw-bold text-white">The HIVE 서버 랭킹</h5>
